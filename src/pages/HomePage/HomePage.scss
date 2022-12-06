@@ -1,0 +1,5 @@
+@use '../../styles//partials/allPartials' as *;
+
+.main {
+    @include setPadding (0, 1rem, 0, 0);
+}
