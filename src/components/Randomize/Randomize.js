@@ -7,6 +7,7 @@ function Randomize () {
 
 const [randRecipe, setRandRecipe] = useState([]);
 
+const [newRecipes, setNewRecipes] = useState([]);
 
     useEffect(()=> {
         axios.get('http://localhost:8080/recipes')
@@ -16,17 +17,23 @@ const [randRecipe, setRandRecipe] = useState([]);
            
         }
     ).catch(err => {console.log(err)})
-    },[setRandRecipe])
+    },[setNewRecipes])
 
-function shuffle (array) {
-   setRandRecipe(array.sort(() => Math.random() - 0.5));
-
+function shuffle () {
+   //let sorted = ([...randRecipe].sort(() => Math.random() - 0.5));
+    let currentIndex = randRecipe.length,    randomIndex;
+    while(currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex --;
+        [randRecipe[currentIndex], randRecipe[randomIndex]] = [randRecipe[randomIndex], randRecipe[currentIndex]]; 
+    }
+    const newArr = randRecipe.slice(0, 13);
+    setNewRecipes(newArr);
 }
-
 
     return (
         <form>
-          <button onClick={() => {shuffle(randRecipe)}}>Randomize</button>
+          <button onClick={shuffle}>Randomize</button>
         </form>
     )
 };

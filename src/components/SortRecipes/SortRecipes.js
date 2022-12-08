@@ -4,9 +4,6 @@ import { useState, useEffect } from 'react';
 function SortRecipes ({recipes, sort}) {
 
 
-
-const [data, setData] = useState([]);
-
 const [sortType, setSortType] = useState('');
 
 useEffect(() => {
@@ -17,10 +14,14 @@ const types = {
     number_of_ingredients: 'number_of_ingredients'
 }; 
 
-const sortProperty = types[type];
 
- const sorted = [...recipes].sort((a, b) =>  b[sortProperty] - a[sortProperty]);
- console.log(sorted)
+const sortProperty = types[type];
+ const sorted = [...recipes].sort((a, b) =>  { 
+
+ 
+    return b[sortProperty] - a[sortProperty]});
+
+
 sort(sorted);
 
 }; sortArray(sortType);
