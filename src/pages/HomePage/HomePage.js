@@ -2,6 +2,7 @@ import './HomePage.scss';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import SortRecipes from '../../components/SortRecipes/SortRecipes';
+import Randomize from '../../components/Randomize/Randomize';
 
 function HomePage () {
 
@@ -21,15 +22,17 @@ function HomePage () {
     
     if(!recipes) {return (<p>Loading....</p>) };
 
-
+function handleSort (array) {
+    setRecipes(array)
+}
 
     return (
         <main className="main">
             <h3>Welcome to my site!</h3>
             <p>Feel free to browse the below recipes or use the sort or filter options to search by your desired criteria</p>
             <div className="main__buttons">
-              <SortRecipes recipes={recipes}/>
-              <button>Randomize</button>
+              <SortRecipes recipes={recipes} sort={handleSort}/>
+              <Randomize />
             </div>
             <div className="main__display">
      {recipes.map(recipe => {
