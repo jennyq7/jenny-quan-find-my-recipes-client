@@ -1,12 +1,13 @@
 import './HomePage.scss';
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SortRecipes from '../../components/SortRecipes/SortRecipes';
 import Randomize from '../../components/Randomize/Randomize';
 
 
 function HomePage () {
+
 
   const [recipes, setRecipes] = useState(null);
 
@@ -32,6 +33,7 @@ function handleSort (array) {
     setRecipes(array)
 }
 
+
     return (
         <main className="main">
             <h3>Welcome to my site!</h3>
@@ -45,7 +47,7 @@ function handleSort (array) {
         return (
             <div className="main__display-item" key={recipe.recipe_id}>        
                <h4>{recipe.recipe_name}</h4>
-               <img src={recipe.recipe_image} alt="recipe" className="main__display-item-img"/>
+               <Link to={`/recipes/${recipe.recipe_id}`}><img src={recipe.recipe_image} alt="recipe" className="main__display-item-img"/></Link>
                <p>{"Category: " + recipe.recipe_types.recipe_type[0]}</p>
                <p>{"Number of ingredients: " + (recipe.recipe_ingredients.ingredient).length}</p>
             </div> 
