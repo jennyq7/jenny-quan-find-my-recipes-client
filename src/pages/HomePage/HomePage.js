@@ -30,7 +30,9 @@ function HomePage () {
     if(!recipes) {return (<p>Loading....</p>) };
 
 function handleSort (array) {
+    console.log("handleSort", array)
     setRecipes(array)
+
 }
 
 
