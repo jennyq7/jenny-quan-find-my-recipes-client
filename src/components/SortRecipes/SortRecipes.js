@@ -18,7 +18,7 @@ const types = {
 }; 
 
 const sortProperty = types[type];
-console.log(sortProperty)
+
  const sorted = [...recipes].sort((a, b) =>  b[sortProperty] - a[sortProperty]);
  console.log(sorted)
 sort(sorted);

@@ -1,13 +1,19 @@
 import './HomePage.scss';
 import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import SortRecipes from '../../components/SortRecipes/SortRecipes';
 import Randomize from '../../components/Randomize/Randomize';
+
 
 function HomePage () {
 
   const [recipes, setRecipes] = useState(null);
 
+  const handleOneRecipe = (e) => {
+    e.preventDefault();
+
+  }
 
 
   useEffect(()=> {axios.get('http://localhost:8080/recipes')
