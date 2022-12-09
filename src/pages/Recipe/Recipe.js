@@ -16,7 +16,7 @@ const [recipeData, setRecipeData] = useState(null);
         axios.get(`http://localhost:8080/recipes/${id}`)
         .then(response => {
             const results = response.data;
-   
+            console.log(response)
     }).catch(err => {console.log(err)})
     },[])
 
@@ -24,7 +24,7 @@ const [recipeData, setRecipeData] = useState(null);
 
     return (
         <>
-        
+          
         </>
     )
 };

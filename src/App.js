@@ -3,6 +3,7 @@ import './App.scss';
 import HomePage from './pages/HomePage/HomePage.js';
 import Header from './components/Header/Header';
 import Recipe from './pages/Recipe/Recipe';
+import AddRecipe from './pages/AddRecipe/AddRecipe';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/recipes" element={<HomePage />} />
           <Route path="/recipes/:id" element={<Recipe />}/>
-          <Route path="/recipes/add" element={''} />
+          <Route path="/recipes/add" element={<AddRecipe />} />
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
