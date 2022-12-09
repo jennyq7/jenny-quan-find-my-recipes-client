@@ -65,6 +65,7 @@ function shuffle (arr) {
                <Link to={`/recipes/${recipe.recipe_id}`}><img src={recipe.recipe_image} alt="recipe" className="main__display-item-img"/></Link>
                <p>{"Category: " + recipe.recipe_types.recipe_type[0]}</p>
                <p>{"Number of ingredients: " + (recipe.recipe_ingredients.ingredient).length}</p>
+               <button>Save</button>
             </div> 
          )
      })
