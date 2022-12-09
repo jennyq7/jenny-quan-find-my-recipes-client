@@ -28,7 +28,7 @@ function handleSort (array) {
 }
 
 const shuffle =  (arr) => {
-    //let sorted = ([...randRecipe].sort(() => Math.random() - 0.5));
+   
     console.log('working');
  
     for (let i = arr.length -1; i > 0; i--) {
