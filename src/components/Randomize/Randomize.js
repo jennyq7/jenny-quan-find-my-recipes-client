@@ -19,8 +19,10 @@ const [newRecipes, setNewRecipes] = useState([]);
     ).catch(err => {console.log(err)})
     },[setNewRecipes])
 
-function shuffle () {
+function shuffle (e) {
    //let sorted = ([...randRecipe].sort(() => Math.random() - 0.5));
+   console.log('working')
+   e.preventDefault();
     let currentIndex = randRecipe.length,    randomIndex;
     while(currentIndex != 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -32,8 +34,8 @@ function shuffle () {
 }
 
     return (
-        <form>
-          <button onClick={shuffle}>Randomize</button>
+        <form onSubmit={shuffle}>
+          <button>Randomize</button>
         </form>
     )
 };

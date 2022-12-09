@@ -17,7 +17,7 @@ function SortRecipes({ recipes, sort }) {
 
             const sortProperty = types[type];
             const sorted = [...recipes].sort((a, b) => {
-                console.log("sorting", sortProperty, a[sortProperty], b[sortProperty], a.recipe_types.recipe_type[0], a.recipe_ingredients.ingredient.length)
+                //console.log("sorting", sortProperty, a[sortProperty], b[sortProperty], a.recipe_types.recipe_type[0], a.recipe_ingredients.ingredient.length)
                 if (sortProperty === "recipe_name") {
 
                     if (a[sortProperty] < b[sortProperty]) {

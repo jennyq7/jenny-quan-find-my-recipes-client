@@ -10,12 +10,13 @@ const { id } = useParams();
 
 const [recipeData, setRecipeData] = useState(null);
 
+
     useEffect(() => {
         if(id === null) return;
         axios.get(`http://localhost:8080/recipes/${id}`)
         .then(response => {
             const results = response.data;
-            console.log(response)
+   
     }).catch(err => {console.log(err)})
     },[])
 

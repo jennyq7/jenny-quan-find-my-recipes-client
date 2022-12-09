@@ -9,20 +9,16 @@ import Randomize from '../../components/Randomize/Randomize';
 function HomePage () {
 
 
-  const [recipes, setRecipes] = useState(null);
+  const [recipes, setRecipes] = useState([]);
 
-  const handleOneRecipe = (e) => {
-    e.preventDefault();
-
-  }
+  const [newRecipes, setNewRecipes] = useState([]);
 
 
   useEffect(()=> {axios.get('http://localhost:8080/recipes')
   .then(response => {
-    console.log(response.data);
     const recipeData = response.data.recipes.recipe;
-    const newRecipeData = recipeData.slice(8, 20);
-    setRecipes(newRecipeData);
+    setRecipes(recipeData);
+    shuffle(recipes);
     
   }).catch (err => {console.log(err)})
 },[]);
@@ -30,10 +26,27 @@ function HomePage () {
     if(!recipes) {return (<p>Loading....</p>) };
 
 function handleSort (array) {
-    console.log("handleSort", array)
     setRecipes(array)
-
 }
+
+function shuffle (arr) {
+    //let sorted = ([...randRecipe].sort(() => Math.random() - 0.5));
+    console.log('working')
+  
+     let currentIndex = arr.length,    randomIndex;
+     while(currentIndex != 0) {
+         randomIndex = Math.floor(Math.random() * currentIndex);
+         currentIndex --;
+         [[...arr][currentIndex], [...arr][randomIndex]] = [[...arr][randomIndex], [...arr][currentIndex]]; 
+     }
+     const newArr = arr.filter((item) => {
+        let counter = [];
+        while(counter.length < 13) {
+        counter.push(item); }
+        return counter;
+     }); //filter to 12
+     setNewRecipes(newArr);
+ }
 
 
     return (
@@ -42,7 +55,7 @@ function handleSort (array) {
             <p>Feel free to browse the below recipes or use the sort or filter options to search by your desired criteria</p>
             <div className="main__buttons">
               <SortRecipes recipes={recipes} sort={handleSort}/>
-              <Randomize />
+              <button onClick={() => {shuffle(recipes)}}>Randomize</button>
             </div>
             <div className="main__display">
      {recipes.map(recipe => {
