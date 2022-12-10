@@ -47,10 +47,21 @@ const shuffle =  (arr) => {
 
 
 
+function saveRecipe (id) {
+
+    axios.post('http://localhost:8080/recipes/saved', {recipe_id: id})
+    .then(response => {
+    console.log(response);
+    }).catch (err => {
+        console.log(err)});
+    }
+
+
     return (
         <main className="main">
             <h3>Welcome to my site!</h3>
             <p>Feel free to browse the below recipes or use the sort or filter options to search by your desired criteria</p>
+            <Link to ="/recipes/saved"><button>Saved pages</button></Link>
             <div className="main__buttons">
               <SortRecipes recipes={recipes} sort={handleSort}/>
               <button onClick={() => {shuffle(recipes)}}>Randomize</button>
@@ -59,12 +70,12 @@ const shuffle =  (arr) => {
             <div className="main__aside">
         {newRecipes.map(recipe => {
                     return (
-                    <div className="main__aide-items" key={recipe.recipe_id}>        
+                    <div className="main__aside-items" key={recipe.recipe_id}>        
                         <h4>{recipe.recipe_name}</h4>
                         <Link to={`/recipes/${recipe.recipe_id}`}><img src={recipe.recipe_image} alt="recipe" className="main__aside-item-img"/></Link>
                         <p>{"Category: " + recipe.recipe_types.recipe_type[0]}</p>
                         <p>{"Number of ingredients: " + (recipe.recipe_ingredients.ingredient).length}</p>
-                        <button>Save</button>
+                        {/* <button>Save</button> */}
                      </div>  
                     )
                 })}
@@ -78,10 +89,11 @@ const shuffle =  (arr) => {
                <Link to={`/recipes/${recipe.recipe_id}`}><img src={recipe.recipe_image} alt="recipe" className="main__display-item-img"/></Link>
                <p>{"Category: " + recipe.recipe_types.recipe_type[0]}</p>
                <p>{"Number of ingredients: " + (recipe.recipe_ingredients.ingredient).length}</p>
-               <button>Save</button>
+               <button onClick={() => {saveRecipe(recipe.recipe_id)}}>Save</button>
+
             </div> 
-         )
-     })
+                            )
+                    })
 
     }      </div>
         </main>
@@ -89,3 +101,4 @@ const shuffle =  (arr) => {
 };
 
 export default HomePage;
+
