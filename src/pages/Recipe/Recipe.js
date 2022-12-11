@@ -17,7 +17,7 @@ const [recipeData, setRecipeData] = useState(null);
         .then(response => {
             const results = response.data.recipe;
             setRecipeData(results);
-            console.log(results);
+            //console.log(results);
     }).catch(err => {console.log(err)})
     },[])
 
@@ -31,8 +31,27 @@ const [recipeData, setRecipeData] = useState(null);
          <img src={recipeData.recipe_images.recipe_image} alt="recipe" /> 
          <p>{recipeData.recipe_types.recipe_type}</p>
          <p>{recipeData.recipe_description}</p>
-         <p>{recipeData.preparation_time_min}</p>
-         <p>{recipeData.ingredients.ingredient[0].food_name}</p>
+         <p>{recipeData.cooking_time_min}</p>
+         <div>Ingredients
+         {(recipeData.ingredients.ingredient).map((item)=> {
+            
+        return  <div className="ingredients" key={item.food_id}> 
+                   <p>{item.food_name}</p>
+                   <p>{item.ingredient_description}</p>
+                   <p>{item.number_of_units}</p> 
+                </div>
+         })
+         }
+         </div>
+         <div>Directions
+         {(recipeData.directions.direction).map((item)=> {
+            return <div className="directions" key={item.direction_number}>
+                     <p>{item.direction_number}</p>
+                     <p>{item.direction_description}</p>
+                   </div>
+         })
+        }
+         </div>
      </div> 
     )
 };
