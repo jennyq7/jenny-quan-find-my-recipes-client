@@ -4,14 +4,15 @@ import axios from 'axios';
 
 function SavedRecipes () {
 
-    // const [savedId, setSavedId] = useState([])
+    const [savedRecipe, setSavedRecipe] = useState([]);
 
-    // axios.get('http://localhost:8080/recipes/saved')
-    // .then(response => {
-    //     console.log(response)
-    // }).catch (err => {console.log(err)})
+    axios.get('http://localhost:8080/recipes/saved')
+    .then(response => {
+        console.log(response)
 
+    }).catch (err => {console.log(err)})
 
+console.log(savedRecipe)
 
     return (
         <>

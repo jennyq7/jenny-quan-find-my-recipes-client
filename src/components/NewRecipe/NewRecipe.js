@@ -9,14 +9,28 @@ function NewRecipe () {
     useEffect(()=> {
         axios.get('http://localhost:8080/recipes/add')
         .then(response => {
-            setRecipeData(response)
-            console.log(response)
+            const org = response.data;
+            const filtered = org.filter((item) => item.recipe_id.length > 9)
+           console.log(filtered)
+            setRecipeData(filtered);
         }).catch(err => {console.log(err)})
     }, [])
-    
+     
     return (
         <>
-         <h2>{recipeData.recipe_name}</h2>
+         <div>New recipes
+         {recipeData.map((recipe)=> {
+            return (
+              <div className="indRecipes" key={recipe.recipe_id}>  
+                <p>{recipe.recipe_name}</p>
+                <p>{recipe.recipe_image}</p>
+                <p>{recipe.recipe_types}</p>
+                <p>{recipe.ingredients}</p>
+              </div>
+            )
+         })
+            }
+         </div>
         </>
     )
 };

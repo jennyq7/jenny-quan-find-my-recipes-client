@@ -13,7 +13,7 @@ const [recipeData, setRecipeData] = useState(null);
 
     useEffect(() => {
         if(id === null) {return <p>loading</p>};
-       axios.get(`http://localhost:8080/recipes/${id}`)
+       axios.get(`http://localhost:8080/recipes/id/${id}`)
         .then(response => {
             const results = response.data.recipe;
             setRecipeData(results);
