@@ -23,7 +23,7 @@ function NewRecipe () {
             return (
               <div className="indRecipes" key={recipe.recipe_id}>  
                 <p>{recipe.recipe_name}</p>
-                <p>{recipe.recipe_image}</p>
+                <img src={`http://localhost:8080${recipe.recipe_image}`} />
                 <p>{recipe.recipe_types}</p>
                 <p>{recipe.ingredients}</p>
               </div>
