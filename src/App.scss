@@ -8,4 +8,5 @@ body {
   box-sizing: border-box;
   @include setPadding (0, 0, 0, 0);
   @include setMargin (0, 0, 0, 0);
+  font-family: "Nunito", "Sans Serif";
 }

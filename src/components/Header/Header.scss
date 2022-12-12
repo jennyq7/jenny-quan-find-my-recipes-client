@@ -1,5 +1,18 @@
-@use '../../styles//partials/allPartials';
+@use '../../styles/partials/_allPartials.scss' as *;
 
 .header {
-    background-color: #16AF1D
+    background-color: $darker-green-color;
+    @include setPadding(1rem, 1rem, 1rem, 1rem);
+
+    &__link {
+        text-decoration: none;
+        display: contents;
+    }
+
+    &__title {
+       text-align: center;
+       font-style: italic;
+        color: $white-color;
+        font-size: 1.5rem;
+    }
 }
