@@ -51,7 +51,7 @@ function SortRecipes({ recipes, sort }) {
 
     return (
         <form className="sort">
-            <label htmlFor="sort">Sort</label>
+            <label htmlFor="sort" className="sort__label">Sort</label>
             <select id="sort" name="sort" onChange={(e) => { setSortType(e.target.value) }}>
                 <option value="start">Choose</option>
                 <option value="name">Name</option>

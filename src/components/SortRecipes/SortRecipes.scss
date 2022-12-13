@@ -1,0 +1,9 @@
+@use '../../styles//partials/allPartials' as *;
+
+.sort {
+
+    &__label {
+        @include setPadding(0, 0.3rem, 0, 0);
+    }
+
+}

@@ -59,39 +59,60 @@ function saveRecipe (id) {
 
     return (
         <main className="main">
-            <h3>Welcome to my site!</h3>
-            <p>Feel free to browse the below recipes or use the sort or filter options to search by your desired criteria</p>
-            <Link to ="/recipes/saved"><button>Saved pages</button></Link>
+            <div className="main__top">
+              <Link to ="/recipes/saved" className="main__top-link"><button className="main__top-button">Saved recipes</button></Link>
+              <Link to ="/recipes/add" className="main__top-link"><button className="main__top-button">Add a recipe</button></Link>
+            </div>
+            <h3 className="main__title">Welcome to My Recipes!</h3>
+            <p className="main__descrip">Feel free to browse the below recipes or use the sort options to search by your desired criteria</p>
             <div className="main__buttons">
               <SortRecipes recipes={recipes} sort={handleSort}/>
-              <button onClick={() => {shuffle(recipes)}}>Randomize</button>
+              <button onClick={() => {shuffle(recipes)}} className="main__buttons-rand">Randomize</button>
             </div>
-            <p>Small selection</p>
+            <p className="main__small">Small selection</p>
             <div className="main__aside">
         {newRecipes.map(recipe => {
                     return (
                     <div className="main__aside-items" key={recipe.recipe_id}>        
-                        <h4>{recipe.recipe_name}</h4>
-                        <Link to={`/recipes/${recipe.recipe_id}`}><img src={recipe.recipe_image} alt="recipe" className="main__aside-item-img"/></Link>
+                        <h4 className="main__aside-items-title">{recipe.recipe_name}</h4>
+                        <div className="main__aside-items-container">
+                          <Link to={`/recipes/${recipe.recipe_id}`} className="main__aside-items-container-link">
+                            <img src={recipe.recipe_image} alt="recipe" className="main__aside-items-container-img"/>
+                          </Link>
+                        </div>
                         <p>{"Category: " + recipe.recipe_types.recipe_type[0]}</p>
                         <p>{"Number of ingredients: " + (recipe.recipe_ingredients.ingredient).length}</p>
-                        {/* <button>Save</button> */}
+                        <div className="main__aside-items-tag">
+                            <a href="https://platform.fatsecret.com">
+                            <img src="https://platform.fatsecret.com/api/static/images/powered_by_fatsecret.png" srcSet="https://platform.fatsecret.com/api/static/images/powered_by_fatsecret_2x.png 2x, https://platform.fatsecret.com/api/static/images/powered_by_fatsecret_3x.png 3x" border="0"/>
+                            </a>	
+                        </div>
                      </div>  
                     )
                 })}
             </div>
-            <p>main display</p>
+            <p className="main__recipes">Main Display</p>
             <div className="main__display">
      {recipes.map(recipe => {
         return (
-            <div className="main__display-item" key={recipe.recipe_id}>        
-               <h4>{recipe.recipe_name}</h4>
-               <Link to={`/recipes/${recipe.recipe_id}`}><img src={recipe.recipe_image} alt="recipe" className="main__display-item-img"/></Link>
+             <div className="main__display-item" key={recipe.recipe_id}>        
+               <h4 className="main__display-item-title">{recipe.recipe_name}</h4>
+               <div className="main__display-item-container">
+                 <Link to={`/recipes/${recipe.recipe_id}`} className="main__display-item-container-link">
+                    <img src={recipe.recipe_image} alt="recipe" className="main__display-item-container-link-img"/>
+                 </Link>
+               </div>
                <p>{"Category: " + recipe.recipe_types.recipe_type[0]}</p>
                <p>{"Number of ingredients: " + (recipe.recipe_ingredients.ingredient).length}</p>
-               <button onClick={() => {saveRecipe(recipe.recipe_id)}}>Save</button>
-
-            </div> 
+               <div className="main__display-item-bottom">
+                 <button onClick={() => {saveRecipe(recipe.recipe_id)}} className="main__display-item-bottom-save">Save</button>
+                 <div className="main__display-item-bottom-tag">
+                    <a href="https://platform.fatsecret.com">
+                    <img src="https://platform.fatsecret.com/api/static/images/powered_by_fatsecret.png" srcSet="https://platform.fatsecret.com/api/static/images/powered_by_fatsecret_2x.png 2x, https://platform.fatsecret.com/api/static/images/powered_by_fatsecret_3x.png 3x" border="0"/>
+                    </a>	
+                 </div>
+               </div>
+             </div> 
                             )
                     })
 

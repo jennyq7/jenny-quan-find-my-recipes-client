@@ -10,7 +10,7 @@ function SavedRecipes () {
    useEffect(() => { axios.get('http://localhost:8080/recipes/saved')
     .then(response => {
        setSavedRecipes(response.data);
-       console.log(response.data[0].recipe)
+       
     }).catch (err => {console.log(err)})
 },[])
 

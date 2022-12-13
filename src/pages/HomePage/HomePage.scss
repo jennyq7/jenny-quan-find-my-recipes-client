@@ -1,16 +1,137 @@
 @use '../../styles//partials/allPartials' as *;
 
 .main {
-    @include setPadding (0, 1rem, 0, 0);
+    @include setPadding (1rem, 1rem, 1rem, 1rem);
+    display: flex;
+    flex-direction: column;
+    font-size: .875rem;
+    line-height: 1.2rem;
+    width: 100%;
+
+    &__top {
+        display: flex;
+        justify-content: flex-end;
+        @include setMargin(0, 0, 1.5rem, 0);
+    }
+
+    &__top-button {
+        background-color: $darker-green-color;
+        border: solid $white-color;
+        color: $white-color;
+        border-radius: 20px;
+        font-weight: 600;
+        @include setPadding(0.5rem, 0.5rem, 0.5rem, 0.5rem);
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        line-height: 1.5rem;
+        font-weight: 600;
+        @include setMargin(0, 0, 1rem, 0);
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__buttons-rand {
+        @extend .main__top-button;
+        background-color: $dark-green;
+    }
+
+    &__small{
+        font-weight: 600;
+        font-size: 1.1rem;
+        @include setMargin(0.7rem, 0, 0.6rem, 0);
+    }
+
+    &__aside {
+        @extend .main__display;
+        @include setMargin(0, 0, 0.5rem, 0);
+    }
+
+    &__aside-items {
+        @extend .main__display-item;
+    }
+
+    &__aside-items-title {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    &__aside-items-container {
+        @extend .main__display-item-container;
+    }
+
+    &__aside-items-container-link {
+        @extend .main__display-item-container-link;
+    }
+
+    &__aside-items-container-img {
+        @extend .main__display-item-container-link-img;
+    }
+
+    &__aside-items-tag {
+        display: flex;
+        justify-content: flex-end;
+        @include setMargin(0.9rem, 0, 0, 0);
+    }
+
+    &__recipes{
+        @extend .main__small;
+        @include setMargin(0.5rem, 0, 0.7rem, 0);
+    }
 
     &__display {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
 
-    // &__display-item-img {
-    //     width: 12.5rem;
-    //     height: 12.5rem;
-    // }
+    &__display-item {
+        border: 1px solid $dark-green;
+        border-radius: 10px;
+        width: 100%;
+        @include setPadding(1rem, 0.5rem, 1rem, 0.5rem);
+        background-color: $light-green;
+    }
+
+    &__display-item-title {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    &__display-item-container {
+        width: 100%;
+        height: 15rem;
+        @include setMargin(1rem, 0, 1rem, 0);
+    }
+
+    &__display-item-container-link {
+        display: contents;
+    }
+
+    &__display-item-container-link-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__display-item-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        @include setPadding(0.6rem, 0, 0, 0);
+    }
+
+    &__display-item-bottom-save {
+        @extend .main__buttons-rand;
+        border: none;
+        @include setPadding(0.5rem, 1rem, 0.5rem, 1rem);
+    }
 
 }
