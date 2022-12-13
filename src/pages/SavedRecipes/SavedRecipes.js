@@ -14,7 +14,7 @@ function SavedRecipes () {
     }).catch (err => {console.log(err)})
 },[])
 
-console.log(savedRecipes)
+
 
     return (
         <div className="saved">
@@ -23,10 +23,6 @@ console.log(savedRecipes)
                return( 
                <RecipeInfo recipe={recipe.recipe} key={recipe.recipe.recipe_id}/>
                )})
-
-
-
-
                }
             </div>
         </div>

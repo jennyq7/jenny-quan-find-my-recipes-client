@@ -1,0 +1,10 @@
+@use '../../styles//partials/allPartials' as *;
+
+.saved {
+    &__recipes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @include setPadding(0, 1rem, 0, 1rem);
+    }
+}
