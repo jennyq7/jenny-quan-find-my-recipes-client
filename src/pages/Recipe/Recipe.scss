@@ -1,0 +1,56 @@
+@use '../../styles//partials/allPartials' as *;
+
+.indRecipe {
+    display: flex;
+    flex-direction: column;
+    @include setPadding(1rem, 1rem, 1rem, 1rem);
+    font-size: .875rem;
+    line-height: 1.25rem;
+
+    &__pageTitle {
+        font-size: 1.6rem;
+        line-height: 1.5rem;
+        font-weight: 600;
+        @include setMargin(0, 0, 1rem, 0);
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 1rem;
+        @include setMargin(0, 0, 1rem, 0);
+    }
+
+    &__container {
+        width: 100%;
+        height: 75vw;
+        @include setMargin(0, 0, 1rem, 0);
+    }
+
+    &__container-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__descrip {
+        @include setMargin(0.5rem, 0, 0.5rem, 0);
+    }
+
+    &__time {
+        @include setMargin(0, 0, 0.5rem, 0);
+    }
+
+    &__ingredients {
+        @include setMargin(0.5rem, 0, 0.5rem, 0);
+    }
+
+    &__directions-items {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    &__tag {
+        display: flex;
+        justify-content: flex-end;
+        @include setMargin(1rem, 0, 0, 0);
+    }
+}

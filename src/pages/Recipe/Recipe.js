@@ -24,34 +24,39 @@ const [recipeData, setRecipeData] = useState(null);
     if(!recipeData) {return <p>loading</p>};
 
     return (
-    <div key={recipeData.recipe_id}>
+    <div key={recipeData.recipe_id} className="indRecipe">
        
-         <h1>Recipe details</h1> 
-         <h3>{recipeData.recipe_name}</h3> 
-         <img src={recipeData.recipe_images.recipe_image} alt="recipe" /> 
-         <p>{recipeData.recipe_types.recipe_type}</p>
-         <p>{recipeData.recipe_description}</p>
-         <p>{recipeData.cooking_time_min}</p>
-         <div>Ingredients
+         <h1 className="indRecipe__pageTitle">Recipe details</h1> 
+         <h3 className="indRecipe__title">{recipeData.recipe_name}</h3> 
+         <div className="indRecipe__container">
+           <img src={recipeData.recipe_images.recipe_image} alt="recipe" className="indRecipe__container-img"/> 
+         </div>
+         <p>Type: {recipeData.recipe_types.recipe_type}</p>
+         <p className="indRecipe__descrip">Description: {recipeData.recipe_description}</p>
+         <p className="indRecipe__time">Cooking time: {recipeData.cooking_time_min} minutes</p>
+         <div className="indRecipe__ingredients">Ingredients:
          {(recipeData.ingredients.ingredient).map((item)=> {
             
-        return  <div className="ingredients" key={item.food_id}> 
-                   <p>{item.food_name}</p>
+         return  <div className="ingredients" key={item.food_id}> 
                    <p>{item.ingredient_description}</p>
-                   <p>{item.number_of_units}</p> 
                 </div>
          })
          }
          </div>
-         <div>Directions
+         <div className="indRecipe__directions">Directions:
          {(recipeData.directions.direction).map((item)=> {
-            return <div className="directions" key={item.direction_number}>
+            return <div className="indRecipe__directions-items" key={item.direction_number}>
                      <p>{item.direction_number}</p>
                      <p>{item.direction_description}</p>
                    </div>
          })
         }
          </div>
+         <div className="indRecipe__tag">
+            <a href="https://platform.fatsecret.com">
+              <img src="https://platform.fatsecret.com/api/static/images/powered_by_fatsecret.png" srcSet="https://platform.fatsecret.com/api/static/images/powered_by_fatsecret_2x.png 2x, https://platform.fatsecret.com/api/static/images/powered_by_fatsecret_3x.png 3x" border="0"/>
+            </a>	
+         </div>   
      </div> 
     )
 };
