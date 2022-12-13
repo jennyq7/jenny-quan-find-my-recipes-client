@@ -6,7 +6,7 @@ function Header () {
     return (
         <header className="header">
             <img src={hat} className="header__img"/>
-            <Link to="/recipes" className="header__link"><h1 className="header__title">FIND MY RECIPES</h1></Link>
+            <Link to="/recipes" className="header__link"><h1 className="header__title">RECIPE BOX</h1></Link>
         </header>
     )
 };

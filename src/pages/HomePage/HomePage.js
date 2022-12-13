@@ -63,7 +63,7 @@ function saveRecipe (id) {
               <Link to ="/recipes/saved" className="main__top-link"><button className="main__top-button">Saved recipes</button></Link>
               <Link to ="/recipes/add" className="main__top-link"><button className="main__top-button">Add a recipe</button></Link>
             </div>
-            <h3 className="main__title">Welcome to My Recipes!</h3>
+            <h3 className="main__title">Welcome to Recipe Box!</h3>
             <p className="main__descrip">Feel free to browse the below recipes or use the sort options to search by your desired criteria</p>
             <div className="main__buttons">
               <SortRecipes recipes={recipes} sort={handleSort}/>
