@@ -17,7 +17,7 @@ const [recipeData, setRecipeData] = useState(null);
         .then(response => {
             const results = response.data.recipe;
             setRecipeData(results);
-            //console.log(results);
+            console.log(results);
     }).catch(err => {console.log(err)})
     },[])
 

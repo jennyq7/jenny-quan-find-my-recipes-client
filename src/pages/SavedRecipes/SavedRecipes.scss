@@ -1,10 +1,32 @@
 @use '../../styles//partials/allPartials' as *;
 
 .saved {
+    @include setPadding(1rem, 1rem, 1rem, 1rem);
+
+    @include tablet {
+        @include setPadding(1rem, 1.5rem, 1rem, 1.5rem);
+    }
+
+    &__title {
+        @include setPadding(0, 0, 1rem, 0);
+        font-size: 1.6rem;
+        line-height: 1.5rem;
+        font-weight: 600;
+
+        @include tablet {
+            font-size: 1.8rem;
+            line-height: 1.7rem;
+        }
+    }
+
     &__recipes {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        @include setPadding(0, 1rem, 0, 1rem);
+        gap: 1rem;
+
+        @include tablet {
+            justify-content: space-between;
+        }
     }
 }
