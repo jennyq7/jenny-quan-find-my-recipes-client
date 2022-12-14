@@ -7,11 +7,27 @@
     font-size: .875rem;
     line-height: 1.25rem;
 
+    @include tablet {
+        font-size: .9375rem;
+        line-height: 1.375rem;
+        @include setPadding(1rem, 2rem, 1rem, 2rem);
+    }
+
+    @include desktop {
+        @include setPadding(1rem, 4rem, 1rem, 4rem);
+    }
+
     &__pageTitle {
         font-size: 1.6rem;
         line-height: 1.5rem;
         font-weight: 600;
         @include setMargin(0, 0, 1rem, 0);
+
+        @include tablet {
+            font-size: 1.8rem;
+            line-height: 1.7rem;
+            @include setMargin(1rem, 0, 1rem, 0);
+        }
     }
 
     &__title {
@@ -24,7 +40,17 @@
         width: 100%;
         height: 75vw;
         @include setMargin(0, 0, 1rem, 0);
-        overflow: hidden;
+        
+        @include tablet {
+            height: 65vw;
+            @include setPadding (1rem, 2rem, 1rem, 0);
+        }
+
+        @include desktop {
+            height: 55vw;
+            width: 90%;
+            @include setPadding(1rem, 0, 1rem, 0);
+        }
     }
 
     &__container-img {
@@ -54,5 +80,14 @@
         display: flex;
         justify-content: flex-end;
         @include setMargin(1rem, 0, 0, 0);
+
+        @include tablet {
+            @include setMargin(1rem, 2rem, 0, 0);
+        }
+
+        @include desktop {
+            @include setMargin(1rem, 0, 0, 0);
+        }
+       
     }
 }
