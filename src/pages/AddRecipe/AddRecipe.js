@@ -29,31 +29,33 @@ function AddRecipe() {
 
 
     return (
-        <>
-            <form className="form" onSubmit={addRecipe}>
-                <h1>Add a recipe</h1>
-                <div className="form__left">
-                    <label htmlFor="name">Recipe Name</label>
-                    <input type="text" name="name" id="name" required />
-                    <label htmlFor="description">Description</label>
-                    <input type="text" name="description" id="description" required />
-                    <img src={recipeImg} alt="food prep" />
+        <div className="add">
+            <form className="add__form" onSubmit={addRecipe}>
+                <h1 className="add__form-title">Add a recipe</h1>
+                <div className="add__form-left">
+                    <label htmlFor="name" className="add__form-left-label">Recipe Name</label>
+                    <input type="text" name="name" id="name" required  className="add__form-left-input"/>
+                    <label htmlFor="description" className="add__form-left-label">Description</label>
+                    <input type="text" name="description" id="description" className="add__form-left-input" required />
+                    <img src={recipeImg} alt="food prep" className="add__form-left-img"/>
                 </div>
-                <div className="form__right">
-                    <label htmlFor="types">Type/category</label>
-                    <input type="text" name="types" id="types" required />
-                    <label htmlFor="directions">Directions</label>
-                    <input type="text" name="directions" id="directions" required />
-                    <label htmlFor="cooking_time">Cooking time</label>
-                    <input type="text" name="cooking_time" id="cooking_time" required />
-                    <label htmlFor="ingredients">Ingredients</label>
-                    <input type="text" name="ingredients" id="ingredients" required />
-                    <button>Add My Recipe</button>
-                    <Link to="/recipes"><button>Cancel</button></Link>
+                <div className="add__form-right">
+                    <label htmlFor="types" className="add__form-right-label">Type/category</label>
+                    <input type="text" name="types" id="types" className="add__form-right-input" required />
+                    <label htmlFor="directions" className="add__form-right-label">Directions</label>
+                    <input type="text" name="directions" id="directions" className="add__form-right-input" required />
+                    <label htmlFor="cooking_time" className="add__form-right-label">Cooking time</label>
+                    <input type="text" name="cooking_time" id="cooking_time" className="add__form-right-input" required />
+                    <label htmlFor="ingredients" className="add__form-right-label">Ingredients</label>
+                    <input type="text" name="ingredients" id="ingredients" className="add__form-right-input" required />
+                    <div className="add__form-right-buttons">
+                      <button className="add__form-right-buttons-add">Add My Recipe</button>
+                      <Link to="/recipes" className="add__form-right-buttons-link"><button className="add__form-right-buttons-cancel">Cancel</button></Link>
+                    </div>
                 </div>
             </form>
             <NewRecipe />
-        </>
+        </div>
     )
 };
 

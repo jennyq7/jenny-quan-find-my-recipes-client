@@ -1,0 +1,78 @@
+@use '../../styles//partials/allPartials' as *;
+
+.add {
+    @include setPadding(1rem, 1rem, 1rem, 1rem);
+    font-size: .875rem;
+    line-height: 1.25rem;
+    display: flex;
+    flex-direction: column;
+
+    &__form {
+        border-bottom: 1px solid $dark-green;
+        @include setPadding(0, 0, 1rem, 0);
+    }
+
+    &__form-title {
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    @include setMargin(0, 0, 1rem, 0);
+    }
+
+    &__form-left {
+    display: flex;
+    flex-direction: column;
+    }
+
+    &__form-left-label {
+        @include setPadding(0, 0, 4px, 0);
+    }
+
+    &__form-left-img {
+        height: 75vw;
+        width: 100%;
+        @include setMargin(0.5rem, 0, 0.5rem, 0);
+    }
+
+    &__form-right {
+        @extend .add__form-left;
+    }
+
+    &__form-right-label {
+        @extend .add__form-left-label;
+    }
+
+    &__form-left-input {
+        border-radius: 4px;
+        width: 100%;
+        height: 1.4rem;
+        border: 1px solid $dark-green;
+        @include setPadding(0.5rem, 0.5rem, 0.5rem, 0.5rem);
+        @include setMargin(0, 0, 0.4rem, 0);
+    }
+
+    &__form-right-input {
+        @extend .add__form-left-input;
+    }
+
+    &__form-right-buttons {
+        display: flex;
+        justify-content: space-between;
+        @include setMargin(0.4rem, 0, 0, 0);
+    }
+
+    &__form-right-buttons-add {
+        background-color: $dark-green;
+        border: solid $white-color;
+        color: $white-color;
+        border-radius: 20px;
+        font-weight: 600;
+        @include setPadding(0.5rem, 0.5rem, 0.5rem, 0.5rem);
+    }
+
+    &__form-right-buttons-cancel {
+        @extend .add__form-right-buttons-add;
+    }
+
+
+}

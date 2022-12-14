@@ -1,0 +1,35 @@
+@use '../../styles//partials/allPartials' as *;
+
+.new {
+    display: flex;
+    flex-direction: column;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    @include setPadding(1rem, 0, 0, 0);
+    overflow: hidden;
+
+    &__title {
+        font-weight: 600;
+        font-size: 1.1rem;
+        @include setPadding(0, 0, 1rem, 0);
+    }
+
+    &__newRecipes {
+        border: 1px solid $dark-green;
+        border-radius: 4px;
+        @include setPadding(1rem, 0.5rem, 1rem, 0.5rem);
+        @include setMargin(0, 0, 1rem, 0);
+        background-color: $light-green;
+    }
+
+    &__newRecipes-name {
+        font-weight: 600;
+        font-size: 1rem;
+        @include setPadding(0, 0, 1rem, 0);
+    }
+
+    &__newRecipes-img {
+        width: 100%;
+        height: 70vw;
+    }
+}

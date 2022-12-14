@@ -17,13 +17,14 @@ function NewRecipe () {
     }, [])
      
     return (
-        <>
-         <div>New recipes
+        
+         <div className="new">
+              <h4 className="new__title">New recipes</h4>
          {recipeData.map((recipe)=> {
             return (
-              <div className="indRecipes" key={recipe.recipe_id}>  
-                <p>{recipe.recipe_name}</p>
-                <img src={`http://localhost:8080${recipe.recipe_image}`} />
+              <div className="new__newRecipes" key={recipe.recipe_id}>  
+                <p className="new__newRecipes-name">{recipe.recipe_name}</p>
+                <img src={`http://localhost:8080${recipe.recipe_image}`} className="new__newRecipes-img"/>
                 <p>{recipe.recipe_types}</p>
                 <p>{recipe.ingredients}</p>
               </div>
@@ -31,7 +32,7 @@ function NewRecipe () {
          })
             }
          </div>
-        </>
+        
     )
 };
 

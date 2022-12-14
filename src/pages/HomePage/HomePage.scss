@@ -14,6 +14,10 @@
         @include setMargin(0, 0, 1.5rem, 0);
     }
 
+    &__top-link {
+        display: contents;
+    }
+
     &__top-button {
         background-color: $darker-green-color;
         border: solid $white-color;

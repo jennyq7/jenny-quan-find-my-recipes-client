@@ -24,11 +24,13 @@
         width: 100%;
         height: 75vw;
         @include setMargin(0, 0, 1rem, 0);
+        overflow: hidden;
     }
 
     &__container-img {
         width: 100%;
         height: 100%;
+        overflow: hidden;
     }
 
     &__descrip {
