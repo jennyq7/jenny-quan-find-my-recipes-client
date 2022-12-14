@@ -8,8 +8,22 @@
     align-items: center;
     width: 100%;
 
+    @include tablet {
+        @include setPadding(0.7rem, 1rem, 0.7rem, 1rem);
+    }
+
+
     &__img {
         width: 20%;
+
+        @include tablet{
+            width: 10%;
+        } 
+
+        @include desktop {
+            width: 7%;
+        }
+
     }
 
     &__link {
@@ -22,5 +36,9 @@
         color: $white-color;
         font-size: 1.5rem;
         font-weight: 600;
+
+        @include tablet {
+            font-size: 1.7rem;
+        }
     }
 }
