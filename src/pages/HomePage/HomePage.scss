@@ -4,9 +4,15 @@
     @include setPadding (1rem, 1rem, 1rem, 1rem);
     display: flex;
     flex-direction: column;
-    font-size: .875rem;
+    font-size: .8125rem;
     line-height: 1.2rem;
     width: 100%;
+
+    @include tablet {
+        font-size: .9375rem;
+        line-height: 1.375rem;
+        @include setPadding (1rem, 1.5rem, 1rem, 1.5rem);
+    }
 
     &__top {
         display: flex;
@@ -25,6 +31,11 @@
         border-radius: 20px;
         font-weight: 600;
         @include setPadding(0.5rem, 0.5rem, 0.5rem, 0.5rem);
+
+        @include tablet {
+            @include setPadding(0.7rem, 1rem, 0.7rem, 1rem);
+            font-size: .9375rem;
+        }
     }
 
     &__title {
@@ -32,6 +43,11 @@
         line-height: 1.5rem;
         font-weight: 600;
         @include setMargin(0, 0, 1rem, 0);
+
+        @include tablet {
+            font-size: 1.8rem;
+            line-height: 1.7rem;
+        }
     }
 
     &__buttons {
@@ -43,12 +59,20 @@
     &__buttons-rand {
         @extend .main__top-button;
         background-color: $dark-green;
+
+        @include tablet {
+            @extend .main__top-button;
+        }
     }
 
     &__small{
         font-weight: 600;
         font-size: 1.1rem;
         @include setMargin(0.7rem, 0, 0.6rem, 0);
+
+        @include tablet {
+            font-size: 1.2rem;
+        }
     }
 
     &__aside {
@@ -62,7 +86,15 @@
 
     &__aside-items-title {
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 0.9rem;
+
+        @include tablet {
+            font-size: 0.74rem;
+        }
+    }
+
+    &__aside-items-text {
+        @extend .main__display-item-text;
     }
 
     &__aside-items-container {
@@ -93,25 +125,57 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
     &__display-item {
         border: 1px solid $dark-green;
         border-radius: 10px;
         width: 100%;
-        @include setPadding(1rem, 0.5rem, 1rem, 0.5rem);
+        @include setPadding(1rem, 0.5rem, 0.7rem, 0.5rem);
         background-color: $light-green;
+
+        @include tablet {
+            width: 30%;
+        }
+
+        @include desktop {
+            width: 20%;
+        }
     }
 
     &__display-item-title {
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 0.9rem;
+        width: 100%;
+
+        @include tablet {
+            font-size: 0.74rem;
+        }
+
+        @include desktop {
+            font-size: 0.8rem;
+        }
+   
     }
 
     &__display-item-container {
         width: 100%;
-        height: 15rem;
+        height: 65%;
         @include setMargin(1rem, 0, 1rem, 0);
+
+        @include tablet {
+            height: 30vw;
+        }
+
+        @include desktop {
+            height: 15vw;
+        }
+
     }
 
     &__display-item-container-link {
@@ -123,6 +187,13 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
+    }
+
+    &__display-item-text {
+        @include tablet {
+            font-size: 0.7rem;
+        }
+       
     }
 
     &__display-item-bottom {

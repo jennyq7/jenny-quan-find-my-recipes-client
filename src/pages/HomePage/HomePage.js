@@ -80,8 +80,8 @@ function saveRecipe (id) {
                             <img src={recipe.recipe_image} alt="recipe" className="main__aside-items-container-img"/>
                           </Link>
                         </div>
-                        <p>{"Category: " + recipe.recipe_types.recipe_type[0]}</p>
-                        <p>{"Number of ingredients: " + (recipe.recipe_ingredients.ingredient).length}</p>
+                        <p className="main__aside-items-text">{"Category: " + recipe.recipe_types.recipe_type[0]}</p>
+                        <p className="main__aside-items-text">{"Number of ingredients: " + (recipe.recipe_ingredients.ingredient).length}</p>
                         <div className="main__aside-items-tag">
                             <a href="https://platform.fatsecret.com">
                             <img src="https://platform.fatsecret.com/api/static/images/powered_by_fatsecret.png" srcSet="https://platform.fatsecret.com/api/static/images/powered_by_fatsecret_2x.png 2x, https://platform.fatsecret.com/api/static/images/powered_by_fatsecret_3x.png 3x" border="0"/>
@@ -102,8 +102,8 @@ function saveRecipe (id) {
                     <img src={recipe.recipe_image} alt="recipe" className="main__display-item-container-link-img"/>
                  </Link>
                </div>
-               <p>{"Category: " + recipe.recipe_types.recipe_type[0]}</p>
-               <p>{"Number of ingredients: " + (recipe.recipe_ingredients.ingredient).length}</p>
+               <p className="main__display-item-text">{"Category: " + recipe.recipe_types.recipe_type[0]}</p>
+               <p className="main__display-item-text">{"Number of ingredients: " + (recipe.recipe_ingredients.ingredient).length}</p>
                <div className="main__display-item-bottom">
                  <button onClick={() => {saveRecipe(recipe.recipe_id)}} className="main__display-item-bottom-save">Save</button>
                  <div className="main__display-item-bottom-tag">
