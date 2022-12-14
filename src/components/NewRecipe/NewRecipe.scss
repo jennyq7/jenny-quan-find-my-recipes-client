@@ -8,28 +8,66 @@
     @include setPadding(1rem, 0, 0, 0);
     overflow: hidden;
 
-    &__title {
+    @include tablet {
+        font-size: .9375rem;
+        line-height: 1.375rem;
+    }
+
+    &__top-title {
         font-weight: 600;
         font-size: 1.1rem;
         @include setPadding(0, 0, 1rem, 0);
+
+        @include tablet {
+            font-size: 1.3rem;
+            display: block;
+        }
     }
 
-    &__newRecipes {
+    &__bottom{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    &__bottom-newRecipes {
         border: 1px solid $dark-green;
         border-radius: 4px;
         @include setPadding(1rem, 0.5rem, 1rem, 0.5rem);
         @include setMargin(0, 0, 1rem, 0);
         background-color: $light-green;
+
+        @include tablet {
+            width: 47%;
+        }
+
+        @include desktop {
+            width: 30%;
+        }
     }
 
-    &__newRecipes-name {
+    &__bottom-newRecipes-name {
         font-weight: 600;
         font-size: 1rem;
         @include setPadding(0, 0, 1rem, 0);
+
+        @include tablet {
+            font-size: 1.2rem;
+        }
     }
 
-    &__newRecipes-img {
+    &__bottom-newRecipes-img {
         width: 100%;
         height: 70vw;
+
+        @include tablet {
+            height: 33vw;
+        }
+
+        @include desktop {
+            height:20vw;
+        }
+
     }
 }

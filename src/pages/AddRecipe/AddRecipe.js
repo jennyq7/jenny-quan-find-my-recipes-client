@@ -31,8 +31,8 @@ function AddRecipe() {
     return (
         <div className="add">
             <form className="add__form" onSubmit={addRecipe}>
-                <h1 className="add__form-title">Add a recipe</h1>
                 <div className="add__form-left">
+                <h1 className="add__form-left-title">Add a recipe</h1>
                     <label htmlFor="name" className="add__form-left-label">Recipe Name</label>
                     <input type="text" name="name" id="name" required  className="add__form-left-input"/>
                     <label htmlFor="description" className="add__form-left-label">Description</label>

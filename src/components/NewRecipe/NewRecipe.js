@@ -19,18 +19,22 @@ function NewRecipe () {
     return (
         
          <div className="new">
-              <h4 className="new__title">New recipes</h4>
-         {recipeData.map((recipe)=> {
-            return (
-              <div className="new__newRecipes" key={recipe.recipe_id}>  
-                <p className="new__newRecipes-name">{recipe.recipe_name}</p>
-                <img src={`http://localhost:8080${recipe.recipe_image}`} className="new__newRecipes-img"/>
-                <p>{recipe.recipe_types}</p>
-                <p>{recipe.ingredients}</p>
+              <div className="new__top">
+                <h4 className="new__top-title">New recipes</h4>
               </div>
+              <div className="new__bottom">
+         {recipeData.map((recipe)=> {
+              return (
+                <div className="new__bottom-newRecipes" key={recipe.recipe_id}>  
+                  <p className="new__bottom-newRecipes-name">{recipe.recipe_name}</p>
+                  <img src={`http://localhost:8080${recipe.recipe_image}`} className="new__bottom-newRecipes-img"/>
+                  <p>{recipe.recipe_types}</p>
+                  <p>{recipe.ingredients}</p>
+                </div>
             )
          })
             }
+              </div>
          </div>
         
     )
