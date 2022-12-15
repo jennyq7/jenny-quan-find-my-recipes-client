@@ -24,25 +24,24 @@
     }
 
     &__form-left-title {
-    font-size: 1.6rem;
-    line-height: 1.5rem;
-    font-weight: 600;
-    @include setMargin(1rem, 0, 1rem, 0);
+        font-size: 1.6rem;
+        line-height: 1.5rem;
+        font-weight: 600;
+        @include setMargin(1rem, 0, 1rem, 0);
 
-    @include tablet {
-        font-size: 1.8rem;
-        line-height: 1.6rem;
-    }
+        @include tablet {
+            font-size: 1.8rem;
+            line-height: 1.6rem;
+        }
     }
 
     &__form-left {
-    display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
 
-    @include tablet {
-        width: 45%;
-    }
-
+        @include tablet {
+            width: 45%;
+        }
     }
 
     &__form-left-label {
@@ -107,6 +106,4 @@
     &__form-right-buttons-cancel {
         @extend .add__form-right-buttons-add;
     }
-
-
 }

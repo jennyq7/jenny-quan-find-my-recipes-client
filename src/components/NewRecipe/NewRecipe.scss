@@ -6,7 +6,6 @@
     font-size: .875rem;
     line-height: 1.25rem;
     @include setPadding(1rem, 0, 0, 0);
-    overflow: hidden;
 
     @include tablet {
         font-size: .9375rem;
@@ -24,7 +23,7 @@
         }
     }
 
-    &__bottom{
+    &__bottom {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -66,8 +65,7 @@
         }
 
         @include desktop {
-            height:20vw;
+            height: 20vw;
         }
-
     }
 }

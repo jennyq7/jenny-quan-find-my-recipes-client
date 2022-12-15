@@ -65,7 +65,7 @@
         }
     }
 
-    &__small{
+    &__small {
         font-weight: 600;
         font-size: 1.1rem;
         @include setMargin(0.7rem, 0, 0.6rem, 0);
@@ -115,7 +115,7 @@
         @include setMargin(0.9rem, 0, 0, 0);
     }
 
-    &__recipes{
+    &__recipes {
         @extend .main__small;
         @include setMargin(0.5rem, 0, 0.7rem, 0);
     }
@@ -160,7 +160,6 @@
         @include desktop {
             font-size: 0.8rem;
         }
-   
     }
 
     &__display-item-container {
@@ -175,7 +174,6 @@
         @include desktop {
             height: 15vw;
         }
-
     }
 
     &__display-item-container-link {
@@ -193,7 +191,6 @@
         @include tablet {
             font-size: 0.7rem;
         }
-       
     }
 
     &__display-item-bottom {
@@ -208,5 +205,4 @@
         border: none;
         @include setPadding(0.5rem, 1rem, 0.5rem, 1rem);
     }
-
 }

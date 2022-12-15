@@ -6,8 +6,8 @@ import NewRecipe from '../../components/NewRecipe/NewRecipe';
 
 function AddRecipe() {
 
+    //function to post recipes to backend
     function addRecipe(e) {
-        e.preventDefault();
 
         const recipeInfo = {
             recipe_name: e.target.name.value,
@@ -20,8 +20,7 @@ function AddRecipe() {
 
         axios.post('http://localhost:8080/recipes/add', recipeInfo)
             .then(response => {
-                alert("Recipe has been added")
-                console.log(alert)
+                alert("Recipe has been added");
             }).catch(err => { console.log(err) });
 
         e.target.reset();
@@ -32,12 +31,12 @@ function AddRecipe() {
         <div className="add">
             <form className="add__form" onSubmit={addRecipe}>
                 <div className="add__form-left">
-                <h1 className="add__form-left-title">Add a recipe</h1>
+                    <h1 className="add__form-left-title">Add a recipe</h1>
                     <label htmlFor="name" className="add__form-left-label">Recipe Name</label>
-                    <input type="text" name="name" id="name" required  className="add__form-left-input"/>
+                    <input type="text" name="name" id="name" required className="add__form-left-input" />
                     <label htmlFor="description" className="add__form-left-label">Description</label>
                     <input type="text" name="description" id="description" className="add__form-left-input" required />
-                    <img src={recipeImg} alt="food prep" className="add__form-left-img"/>
+                    <img src={recipeImg} alt="food prep" className="add__form-left-img" />
                 </div>
                 <div className="add__form-right">
                     <label htmlFor="types" className="add__form-right-label">Type/category</label>
@@ -49,8 +48,8 @@ function AddRecipe() {
                     <label htmlFor="ingredients" className="add__form-right-label">Ingredients</label>
                     <input type="text" name="ingredients" id="ingredients" className="add__form-right-input" required />
                     <div className="add__form-right-buttons">
-                      <button className="add__form-right-buttons-add">Add My Recipe</button>
-                      <Link to="/recipes" className="add__form-right-buttons-link"><button className="add__form-right-buttons-cancel">Cancel</button></Link>
+                        <button className="add__form-right-buttons-add">Add My Recipe</button>
+                        <Link to="/recipes" className="add__form-right-buttons-link"><button className="add__form-right-buttons-cancel">Cancel</button></Link>
                     </div>
                 </div>
             </form>
