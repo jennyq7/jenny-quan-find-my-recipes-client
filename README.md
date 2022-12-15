@@ -2,17 +2,11 @@
 
 Title: Recipe Box: This is a recipe app that allows you to find recipes, sort them, save and add recipes. It uses front-end and back-end technologies.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+Client: React, HTML, CSS, SASS, JavaScript, axios, react-router-dom
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
 ## Install React:
 Install my-project with npx:
@@ -30,6 +24,16 @@ Install my-project with npx:
   npm start
 ```
 After install import the above in the relevant files.
+
+## Usage/examples:
+
+```javascript
+import Component from 'my-project'
+
+function App() {
+  return <Component />
+}
+```
 
 ### Lessons learned:
 
