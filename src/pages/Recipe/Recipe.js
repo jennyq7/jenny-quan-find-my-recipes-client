@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import './Recipe.scss';
 import { useParams } from 'react-router-dom';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Recipe() {
 
   const { id } = useParams();
@@ -12,7 +14,7 @@ function Recipe() {
   //function to return individual recipe info page
   useEffect(() => {
     if (id === null) { return <p>loading</p> };
-    axios.get(`http://localhost:8080/recipes/id/${id}`)
+    axios.get(`${API_URL}/recipes/id/${id}`)
       .then(response => {
         const results = response.data.recipe;
         setRecipeData(results);

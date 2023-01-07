@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SortRecipes from '../../components/SortRecipes/SortRecipes';
 
+const API_URL = process.env.REACT_APP_API_URL;
 
 function HomePage() {
   //the state to set original array
@@ -14,7 +15,7 @@ function HomePage() {
 
   //function to get all recipes from API 
   useEffect(() => {
-    axios.get('http://localhost:8080/recipes')
+    axios.get(`${API_URL}/recipes`)
       .then(response => {
         const recipeData = response.data.recipes.recipe;
         setRecipes(recipeData);
@@ -46,7 +47,7 @@ function HomePage() {
   //function to save recipe when click on save button to backend
   function saveRecipe(id) {
 
-    axios.post('http://localhost:8080/recipes/saved', { recipe_id: id })
+    axios.post(`${API_URL}/recipes/saved`, { recipe_id: id })
       .then(response => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }).catch(err => {

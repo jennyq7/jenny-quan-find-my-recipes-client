@@ -4,6 +4,8 @@ import recipeImg from '../../assets/recipe.jpg';
 import { Link } from 'react-router-dom';
 import NewRecipe from '../../components/NewRecipe/NewRecipe';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function AddRecipe() {
 
     //function to post recipes to backend
@@ -18,13 +20,13 @@ function AddRecipe() {
             ingredients: e.target.ingredients.value
         }
 
-        axios.post('http://localhost:8080/recipes/add', recipeInfo)
+        axios.post(`${API_URL}/recipes/add`, recipeInfo)
             .then(response => {
-                alert("Recipe has been added");
+                return response.data;
             }).catch(err => { console.log(err) });
-
+        alert("Recipe has been added");
         e.target.reset();
-    }
+    };
 
 
     return (

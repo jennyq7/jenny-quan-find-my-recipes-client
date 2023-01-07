@@ -2,13 +2,15 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './NewRecipe.scss';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function NewRecipe() {
 
   const [recipeData, setRecipeData] = useState([]);
 
   //function to get new added recipes on page load that was posted to the server
   useEffect(() => {
-    axios.get('http://localhost:8080/recipes/add')
+    axios.get(`${API_URL}/recipes/add`)
       .then(response => {
         const org = response.data;
         const filtered = org.filter((item) => item.recipe_id.length > 9);
@@ -26,7 +28,7 @@ function NewRecipe() {
           return (
             <div className="new__bottom-newRecipes" key={recipe.recipe_id}>
               <p className="new__bottom-newRecipes-name">{recipe.recipe_name}</p>
-              <img src={`http://localhost:8080${recipe.recipe_image}`} className="new__bottom-newRecipes-img" />
+              <img src={`${API_URL}${recipe.recipe_image}`} className="new__bottom-newRecipes-img" />
               <p>{recipe.recipe_types}</p>
               <p>{recipe.ingredients}</p>
             </div>
