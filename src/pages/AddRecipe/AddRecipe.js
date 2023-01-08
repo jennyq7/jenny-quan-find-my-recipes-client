@@ -3,10 +3,30 @@ import './AddRecipe.scss';
 import recipeImg from '../../assets/recipe.jpg';
 import { Link } from 'react-router-dom';
 import NewRecipe from '../../components/NewRecipe/NewRecipe';
+import { useState} from 'react';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
 function AddRecipe() {
+
+    const [newRecipe, setNewRecipe] = useState({
+        recipe_name: "",
+        recipe_description: "",
+        recipe_types: "",
+        directions: "",
+        cooking_time_min: "",
+        ingredients: ""
+    })
+
+    const updateRecipe = e => {
+        const {name, value} = e.target; 
+        setNewRecipe((current) => {
+            return {
+                ...current,
+                [name]: value
+            };
+        })
+    }
 
     //function to post recipes to backend
     function addRecipe(e) {
@@ -40,22 +60,22 @@ function AddRecipe() {
             <form className="add__form" onSubmit={addRecipe}>
                 <div className="add__form-left">
                     <h1 className="add__form-left-title">Add a recipe</h1>
-                    <label htmlFor="name" className="add__form-left-label">Recipe Name</label>
-                    <input type="text" name="name" id="name" required className="add__form-left-input" />
-                    <label htmlFor="description" className="add__form-left-label">Description</label>
-                    <input type="text" name="description" id="description" className="add__form-left-input" required />
+                    <label htmlFor="recipe_name" className="add__form-left-label">Recipe Name</label>
+                    <input type="text" name="name" onChange={updateRecipe} id="recipe_name" required className="add__form-left-input" />
+                    <label htmlFor="recipe_description" className="add__form-left-label">Description</label>
+                    <input type="text" name="description" onChange={updateRecipe} id="recipe_description" className="add__form-left-input" required />
                     {/* <img src={recipeImg} alt="food prep" className="add__form-left-img" /> */}
-                    <input type="file" name="file" className="add__form-left-input--file" required/>
+                    <input type="file" name="file" onChange={updateRecipe} className="add__form-left-input--file" required/>
                 </div>
                 <div className="add__form-right">
-                    <label htmlFor="types" className="add__form-right-label">Type/category</label>
-                    <input type="text" name="types" id="types" className="add__form-right-input" required />
+                    <label htmlFor="recipe_types" className="add__form-right-label">Type/category</label>
+                    <input type="text" name="types" onChange={updateRecipe} id="recipe_types" className="add__form-right-input" required />
                     <label htmlFor="directions" className="add__form-right-label">Directions</label>
-                    <input type="text" name="directions" id="directions" className="add__form-right-input" required />
-                    <label htmlFor="cooking_time" className="add__form-right-label">Cooking time</label>
-                    <input type="text" name="cooking_time" id="cooking_time" className="add__form-right-input" required />
+                    <input type="text" name="directions" onChange={updateRecipe} id="directions" className="add__form-right-input" required />
+                    <label htmlFor="cooking_time_min" className="add__form-right-label">Cooking time</label>
+                    <input type="text" name="cooking_time" onChange={updateRecipe} id="cooking_time_min" className="add__form-right-input" required />
                     <label htmlFor="ingredients" className="add__form-right-label">Ingredients</label>
-                    <input type="text" name="ingredients" id="ingredients" className="add__form-right-input" required />
+                    <input type="text" name="ingredients" onChange={updateRecipe} id="ingredients" className="add__form-right-input" required />
                     <div className="add__form-right-buttons">
                         <button className="add__form-right-buttons-add">Add My Recipe</button>
                         <Link to="/recipes" className="add__form-right-buttons-link"><button className="add__form-right-buttons-cancel">Cancel</button></Link>
