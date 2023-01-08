@@ -65,7 +65,7 @@ function AddRecipe() {
                     <label htmlFor="recipe_description" className="add__form-left-label">Description</label>
                     <input type="text" name="description" onChange={updateRecipe} id="recipe_description" className="add__form-left-input" required />
                     {/* <img src={recipeImg} alt="food prep" className="add__form-left-img" /> */}
-                    <input type="file" name="file" onChange={updateRecipe} className="add__form-left-input--file" required/>
+                    <input type="file" name="file" onChange={updateRecipe} id="file" className="add__form-left-input--file" required/>
                 </div>
                 <div className="add__form-right">
                     <label htmlFor="recipe_types" className="add__form-right-label">Type/category</label>
