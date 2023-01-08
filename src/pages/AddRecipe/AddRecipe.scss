@@ -62,6 +62,10 @@
         }
     }
 
+    &__form-left-input--file {
+        @include setPadding(0, 0, 1rem, 0);
+    }
+
     &__form-right {
         @extend .add__form-left;
 

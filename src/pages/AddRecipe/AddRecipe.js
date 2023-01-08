@@ -17,7 +17,8 @@ function AddRecipe() {
             recipe_types: e.target.types.value,
             directions: e.target.directions.value,
             cooking_time_min: e.target.cooking_time.value,
-            ingredients: e.target.ingredients.value
+            ingredients: e.target.ingredients.value,
+            //recipe_image: e.target.file.value
         }
 
         axios.post(`${API_URL}/recipes/add`, recipeInfo)
@@ -39,6 +40,7 @@ function AddRecipe() {
                     <label htmlFor="description" className="add__form-left-label">Description</label>
                     <input type="text" name="description" id="description" className="add__form-left-input" required />
                     <img src={recipeImg} alt="food prep" className="add__form-left-img" />
+                    {/* <input type="file" name="file" className="add__form-left-input--file" required/> */}
                 </div>
                 <div className="add__form-right">
                     <label htmlFor="types" className="add__form-right-label">Type/category</label>
