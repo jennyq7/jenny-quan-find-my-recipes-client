@@ -11,18 +11,23 @@ function AddRecipe() {
     //function to post recipes to backend
     function addRecipe(e) {
 
-        const recipeInfo = {
-            recipe_name: e.target.name.value,
-            recipe_description: e.target.description.value,
-            recipe_types: e.target.types.value,
-            directions: e.target.directions.value,
-            cooking_time_min: e.target.cooking_time.value,
-            ingredients: e.target.ingredients.value,
-            //recipe_image: e.target.file.value
-        }
+        // const recipeInfo = {
+        //     recipe_name: e.target.name.value,
+        //     recipe_description: e.target.description.value,
+        //     recipe_types: e.target.types.value,
+        //     directions: e.target.directions.value,
+        //     cooking_time_min: e.target.cooking_time.value,
+        //     ingredients: e.target.ingredients.value,
+        //     //recipe_image: e.target.file.value
+        // }
 
-        axios.post(`${API_URL}/recipes/add`, recipeInfo)
-            .then(response => {
+        const form = e.target;
+
+        const formData = new FormData(form);
+
+        axios.post(`${API_URL}/recipes/add`, formData, {
+            headers: {"Content-Type": "multipart/form-data"}
+        }).then(response => {
                 return response.data;
             }).catch(err => { console.log(err) });
         alert("Recipe has been added");
@@ -39,8 +44,8 @@ function AddRecipe() {
                     <input type="text" name="name" id="name" required className="add__form-left-input" />
                     <label htmlFor="description" className="add__form-left-label">Description</label>
                     <input type="text" name="description" id="description" className="add__form-left-input" required />
-                    <img src={recipeImg} alt="food prep" className="add__form-left-img" />
-                    {/* <input type="file" name="file" className="add__form-left-input--file" required/> */}
+                    {/* <img src={recipeImg} alt="food prep" className="add__form-left-img" /> */}
+                    <input type="file" name="file" className="add__form-left-input--file" required/>
                 </div>
                 <div className="add__form-right">
                     <label htmlFor="types" className="add__form-right-label">Type/category</label>
