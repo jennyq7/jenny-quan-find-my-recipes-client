@@ -28,7 +28,7 @@ function NewRecipe() {
           return (
             <div className="new__bottom-newRecipes" key={recipe.recipe_id}>
               <p className="new__bottom-newRecipes-name">{recipe.recipe_name}</p>
-              <img src={`${API_URL}${recipe.recipe_image}`} className="new__bottom-newRecipes-img" />
+              <img src={`${recipe.recipe_image}`} className="new__bottom-newRecipes-img" />
               <p>{recipe.recipe_types}</p>
               <p>{recipe.ingredients}</p>
             </div>
