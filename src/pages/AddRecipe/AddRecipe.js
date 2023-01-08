@@ -61,19 +61,19 @@ function AddRecipe() {
                 <div className="add__form-left">
                     <h1 className="add__form-left-title">Add a recipe</h1>
                     <label htmlFor="recipe_name" className="add__form-left-label">Recipe Name</label>
-                    <input type="text" name="name" onChange={updateRecipe} id="recipe_name" required className="add__form-left-input" />
+                    <input type="text" name="recipe_name" onChange={updateRecipe} id="recipe_name" required className="add__form-left-input" />
                     <label htmlFor="recipe_description" className="add__form-left-label">Description</label>
-                    <input type="text" name="description" onChange={updateRecipe} id="recipe_description" className="add__form-left-input" required />
+                    <input type="text" name="recipe_description" onChange={updateRecipe} id="recipe_description" className="add__form-left-input" required />
                     {/* <img src={recipeImg} alt="food prep" className="add__form-left-img" /> */}
                     <input type="file" name="file" onChange={updateRecipe} id="file" className="add__form-left-input--file" required/>
                 </div>
                 <div className="add__form-right">
                     <label htmlFor="recipe_types" className="add__form-right-label">Type/category</label>
-                    <input type="text" name="types" onChange={updateRecipe} id="recipe_types" className="add__form-right-input" required />
+                    <input type="text" name="recipe_types" onChange={updateRecipe} id="recipe_types" className="add__form-right-input" required />
                     <label htmlFor="directions" className="add__form-right-label">Directions</label>
                     <input type="text" name="directions" onChange={updateRecipe} id="directions" className="add__form-right-input" required />
                     <label htmlFor="cooking_time_min" className="add__form-right-label">Cooking time</label>
-                    <input type="text" name="cooking_time" onChange={updateRecipe} id="cooking_time_min" className="add__form-right-input" required />
+                    <input type="text" name="cooking_time_min" onChange={updateRecipe} id="cooking_time_min" className="add__form-right-input" required />
                     <label htmlFor="ingredients" className="add__form-right-label">Ingredients</label>
                     <input type="text" name="ingredients" onChange={updateRecipe} id="ingredients" className="add__form-right-input" required />
                     <div className="add__form-right-buttons">
