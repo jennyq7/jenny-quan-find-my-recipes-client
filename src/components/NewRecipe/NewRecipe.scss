@@ -36,7 +36,8 @@
         @include setPadding(1rem, 0.5rem, 1rem, 0.5rem);
         @include setMargin(0, 0, 1rem, 0);
         background-color: $light-green;
-
+        width: 100%;
+        
         @include tablet {
             width: 47%;
         }
