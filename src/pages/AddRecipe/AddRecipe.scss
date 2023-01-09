@@ -63,7 +63,7 @@
     }
 
     &__form-left-input--file {
-        @include setPadding(0, 0, 1rem, 0);
+        @include setPadding(1rem, 0, 0, 0);
     }
 
     &__form-right {
