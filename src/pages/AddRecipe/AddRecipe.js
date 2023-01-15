@@ -44,10 +44,9 @@ function AddRecipe() {
 
         // const formData = new FormData(form);
 
-        axios.post(`${API_URL}/recipes/add`, 
+        axios.post(`${API_URL}/recipes/add`, recipeInfo) 
         // formData, {
         //     headers: {"Content-Type": "multipart/form-data"} }
-        recipeInfo)
         .then(response => {
                 return response.data;
             }).catch(err => { console.log(err) });
