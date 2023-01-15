@@ -32,21 +32,20 @@ function AddRecipe() {
     function addRecipe(e) {
 
         const recipeInfo = {
-            recipe_name: e.target.name.value,
-            recipe_description: e.target.description.value,
-            recipe_types: e.target.types.value,
+            recipe_name: e.target.recipe_name.value,
+            recipe_description: e.target.recipe_description.value,
+            recipe_types: e.target.recipe_types.value,
             directions: e.target.directions.value,
-            cooking_time_min: e.target.cooking_time.value,
+            cooking_time_min: e.target.cooking_time_min.value,
             ingredients: e.target.ingredients.value,
         }
 
         // const form = e.target;
 
         // const formData = new FormData(form);
-
-        axios.post(`${API_URL}/recipes/add`, recipeInfo) 
-        // formData, {
+     // formData, {
         //     headers: {"Content-Type": "multipart/form-data"} }
+        axios.post(`${API_URL}/recipes/add`, recipeInfo) 
         .then(response => {
                 return response.data;
             }).catch(err => { console.log(err) });
