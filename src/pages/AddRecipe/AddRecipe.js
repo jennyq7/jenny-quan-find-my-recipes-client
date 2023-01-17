@@ -31,15 +31,6 @@ function AddRecipe() {
     //function to post recipes to backend
     function addRecipe(e) {
 
-        // const recipeInfo = {
-        //     recipe_name: e.target.name.value,
-        //     recipe_description: e.target.description.value,
-        //     recipe_types: e.target.types.value,
-        //     directions: e.target.directions.value,
-        //     cooking_time_min: e.target.cooking_time.value,
-        //     ingredients: e.target.ingredients.value,
-        //     //recipe_image: e.target.file.value
-        // }
 
         const form = e.target;
 
