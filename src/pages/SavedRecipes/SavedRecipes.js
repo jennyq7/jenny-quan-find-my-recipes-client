@@ -19,11 +19,13 @@ function SavedRecipes() {
 
     return (
         <div className="saved">
-            <h1 className="saved__title">Saved recipes</h1>
+            <h1 className="saved__title">Saved recipes{API_URL}</h1>
             <div className="saved__recipes">
                 {savedRecipes.map((recipe) => {
                     return (
+                        <>
                         <RecipeInfo recipe={recipe.recipe} key={recipe.recipe.recipe_id} />
+                        </>
                     )
                 })
                 }
